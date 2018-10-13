@@ -16,8 +16,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         //判断用户是否已经选择过城市数据，如果是，则跳过城市选择页面
         SharedPreferences preferences= PreferenceManager.getDefaultSharedPreferences(this);
         if(preferences.getString("weather",null)!=null){

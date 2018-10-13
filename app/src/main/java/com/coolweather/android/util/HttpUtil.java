@@ -7,7 +7,6 @@ public class HttpUtil {
     public static void sendOkHttpRequest(String address,okhttp3.Callback callback){
         OkHttpClient client=new OkHttpClient();
         Request request=new Request.Builder().url(address).build();
-        client.newCall(request).enqueue(callback);
-        /*enqueue(Callback callback ),计划在将来某个时候执行请求*/
+        client.newCall(request).enqueue(callback);// enqueue(Callback callback ):计划在将来某个时候执行请求
     }
 }
