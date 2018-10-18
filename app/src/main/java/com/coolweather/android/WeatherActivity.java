@@ -24,6 +24,7 @@ import com.bumptech.glide.Glide;
 import com.coolweather.android.gson.Forecast;
 import com.coolweather.android.gson.Weather;
 import com.coolweather.android.service.AutoUpdateService;
+import com.coolweather.android.util.ActivityCollector;
 import com.coolweather.android.util.HttpUtil;
 import com.coolweather.android.util.Utility;
 
@@ -34,7 +35,7 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class WeatherActivity extends AppCompatActivity {
+public class WeatherActivity extends BaseActivity {
 
     public DrawerLayout drawerLayout;
     private Button navButton;
@@ -54,6 +55,10 @@ public class WeatherActivity extends AppCompatActivity {
     private static final String TAG = "WeatherActivity";
     private ImageView bingPicImg;
 
+    @Override
+    public void onBackPressed() {
+        ActivityCollector.exit();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
